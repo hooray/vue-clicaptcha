@@ -1,28 +1,20 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <button type="button" @click="captcha()">点击我</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Clicaptcha from "@/components/index.js";
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    methods: {
+        captcha() {
+            Clicaptcha({
+                src: "http://localhost/clicaptcha/clicaptcha.php",
+                callback: () => {
+                    alert("yes");
+                }
+            });
+        }
+    }
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
