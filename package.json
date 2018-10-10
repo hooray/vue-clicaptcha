@@ -1,10 +1,11 @@
 {
   "name": "vue-clicaptcha",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.5",
+  "main": "./dist/clicaptcha.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name clicaptcha ./src/components/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

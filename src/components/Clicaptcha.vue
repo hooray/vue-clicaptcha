@@ -68,12 +68,15 @@ export default {
                         })
                     )
                     .then(cb => {
+                        let that = this;
                         if (cb.data == 1) {
-                            this.close();
-                            this.callback();
+                            that.tip = that.success;
+                            setTimeout(() => {
+                                that.close();
+                                that.callback();
+                            }, 1500);
                         } else {
-                            this.tip = this.error;
-                            let that = this;
+                            that.tip = that.error;
                             setTimeout(() => {
                                 that.reset();
                             }, 1500);
