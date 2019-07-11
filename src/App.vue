@@ -9,7 +9,7 @@ export default {
     methods: {
         captcha() {
             Clicaptcha({
-                src: "http://localhost/clicaptcha/clicaptcha.php",
+                src: "http://localhost/clicaptcha-server/clicaptcha.php",
                 callback: () => {
                     alert("yes");
                 }
