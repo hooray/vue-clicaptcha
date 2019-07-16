@@ -1,5 +1,7 @@
 import Vue from 'vue'
+import VueCookies from 'vue-cookies'
 
+Vue.use(VueCookies)
 let ClicaptchaConstructor = Vue.extend(require('./Clicaptcha.vue').default)
 
 let instance;
