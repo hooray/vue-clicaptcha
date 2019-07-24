@@ -28,6 +28,6 @@ VueClicaptcha({
 
 ## 预览效果
 
-![](https://i.loli.net/2018/10/10/5bbdb7ca30961.png)
-![](https://i.loli.net/2018/10/10/5bbdba619fc92.png)
-![](https://i.loli.net/2018/10/10/5bbdba4132cab.png)
+![](https://i.loli.net/2019/07/24/5d37fa1ad6a0631208.png)
+![](https://i.loli.net/2019/07/24/5d37f9e77ff5f52889.png)
+![](https://i.loli.net/2019/07/24/5d37fa41a598430090.png)
