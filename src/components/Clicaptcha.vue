@@ -1,7 +1,10 @@
 <template>
     <div>
-        <div id="clicaptcha-box">
-            <img class="clicaptcha-img" :src="imgSrc" @load="setTitle" @click.prevent="record($event)" alt="验证码加载失败，请点击刷新按钮">
+        <div id="clicaptcha-container">
+			<div class="clicaptcha-imgbox">
+				<img class="clicaptcha-img" :src="imgSrc" @load="setTitle" @click.prevent="record($event)" alt="验证码加载失败，请点击刷新按钮">
+				<span v-for="(item, index) in xy" :key="index" class="step" :style="`left:${item.split(',')[0] - 13}px;top:${item.split(',')[1] - 13}px`">{{index + 1}}</span>
+			</div>
             <div class="clicaptcha-title" v-if="tip">
                 {{tip}}
             </div>
@@ -96,7 +99,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#clicaptcha-box {
+#clicaptcha-container {
     width: 350px;
     height: 290px;
     padding: 15px;
@@ -111,11 +114,30 @@ export default {
     border-radius: 10px;
     box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset,
         0 0.5em 1em rgba(0, 0, 0, 0.6);
-    .clicaptcha-img {
-        width: 350px;
-        height: 200px;
-        border: none;
-    }
+	.clicaptcha-imgbox {
+		position: relative;
+		.clicaptcha-img {
+			width: 350px;
+			height: 200px;
+			border: none;
+		}
+		.step {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			font-size: 14px;
+			font-weight: bold;
+			text-align: center;
+			color: #f04848;
+			border: 3px solid #f04848;
+			background-color: #fff;
+			border-radius: 30px;
+			box-shadow: 0 0 10px #fff;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+	}
     .clicaptcha-title {
         font-family: "Microsoft YaHei";
         height: 40px;
